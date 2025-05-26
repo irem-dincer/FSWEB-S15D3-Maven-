@@ -61,7 +61,7 @@ public class MainTest {
     @DisplayName("removeDuplicates method doğru çalışıyor mu?")
     @Test
     public void testRemoveMethod() {
-        List<Employee> list = Main.removeDuplicates(employees);
+        List<Employee> list = Main.removeDuplicates(new LinkedList<>(employees));
         System.out.println(list);
         assertEquals(list.size(), 1);
         assertEquals(list.get(0).getFirstname(), "Burak");
@@ -70,7 +70,7 @@ public class MainTest {
     @DisplayName("calculatedWord method doğru çalışıyor mu?")
     @Test
     public void testCalculateWordMethod() {
-        Map<String, Integer> map = WordCounter.calculatedWord();
+        Map<String, Integer> map = WordCounter.calculateWord();
         assertEquals(map.get("which"), 3);
         assertEquals(map.get("turkish"), 2);
         assertEquals(map.get("mustafa"), 3);
